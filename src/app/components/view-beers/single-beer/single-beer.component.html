@@ -1,1 +1,6 @@
-<p>single-beer works!</p>
+<div style="height: 500px; width: 100%;" *ngIf="beer">
+  <h1>{{ beer.name }}</h1>
+  <h3>{{ beer.tagline }}</h3>
+  <p>{{ beer.description}}</p>
+  <img src="{{ beer.imageUrl}}" [height]="100" [width]="100">
+</div>
