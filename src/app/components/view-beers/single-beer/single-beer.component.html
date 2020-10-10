@@ -1,6 +1,10 @@
-<div style="height: 500px; width: 100%;" *ngIf="beer">
-  <h1>{{ beer.name }}</h1>
-  <h3>{{ beer.tagline }}</h3>
-  <p>{{ beer.description}}</p>
-  <img src="{{ beer.imageUrl}}" [height]="100" [width]="100">
-</div>
+<mat-card *ngIf="beer" style="width: 50%; margin: 0 !important;">
+  <mat-card-title>
+    {{ beer.name }}
+  </mat-card-title>
+  <mat-card-subtitle>{{ beer.tagline }}</mat-card-subtitle>
+  <mat-card-content>
+    <p>{{ beer.description}}</p>
+    <img src="{{ beer.imageUrl}}" [height]="100" [width]="100">
+  </mat-card-content>
+</mat-card>
