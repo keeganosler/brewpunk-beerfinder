@@ -13,6 +13,8 @@ import { BeersListComponent } from './components/view-beers/beers-list/beers-lis
 import { SingleBeerComponent } from './components/view-beers/single-beer/single-beer.component';
 import { SingleBeerFrontComponent } from './components/view-beers/single-beer/single-beer-front/single-beer-front.component';
 import { SingleBeerBackComponent } from './components/view-beers/single-beer/single-beer-back/single-beer-back.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { SingleBeerBackComponent } from './components/view-beers/single-beer/sin
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
