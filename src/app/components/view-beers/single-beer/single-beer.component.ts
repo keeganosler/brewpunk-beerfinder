@@ -15,6 +15,8 @@ export class SingleBeerComponent implements OnInit, OnDestroy {
   subs: Subscription;
   beer: SingleBeerModel;
 
+  singleBeerFront: boolean = true
+
   ngOnInit(): void {
     this.subs.add(this.storageService.currentBeer.subscribe(b => {
       console.log("in single beer component: ", b)
@@ -26,6 +28,10 @@ export class SingleBeerComponent implements OnInit, OnDestroy {
     if (this.subs) {
       this.subs.unsubscribe()
     }
+  }
+
+  switchBackToFront() {
+    this.singleBeerFront = !this.singleBeerFront
   }
 
 }

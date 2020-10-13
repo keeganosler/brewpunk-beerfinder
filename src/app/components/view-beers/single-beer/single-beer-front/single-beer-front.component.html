@@ -1,1 +1,10 @@
-<p>single-beer-front works!</p>
+<mat-card *ngIf="beer" style="width: 85%; margin: 0 auto">
+  <mat-card-title>
+    {{ beer.name }}
+  </mat-card-title>
+  <mat-card-subtitle>{{ beer.tagline }}</mat-card-subtitle>
+  <mat-card-content>
+    <p>{{ beer.description}}</p>
+    <img src="{{ beer.imageUrl}}" [height]="400" [width]="100">
+  </mat-card-content>
+</mat-card>

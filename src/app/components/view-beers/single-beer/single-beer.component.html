@@ -1,10 +1,3 @@
-<mat-card *ngIf="beer" style="width: 50%; margin: 0 !important;">
-  <mat-card-title>
-    {{ beer.name }}
-  </mat-card-title>
-  <mat-card-subtitle>{{ beer.tagline }}</mat-card-subtitle>
-  <mat-card-content>
-    <p>{{ beer.description}}</p>
-    <img src="{{ beer.imageUrl}}" [height]="100" [width]="100">
-  </mat-card-content>
-</mat-card>
+<app-single-beer-front *ngIf="singleBeerFront" [beer]="beer"></app-single-beer-front>
+<app-single-beer-back *ngIf="!singleBeerFront"></app-single-beer-back>
+<button mat-stroked-button>{{ singleBeerFront ? 'Show More Details ->' : '<- Show Less'}}</button>

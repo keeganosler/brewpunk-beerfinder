@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {StorageService} from '../../../../services/storage.service';
+import {Subscription} from 'rxjs';
+import {SingleBeerModel} from '../../../../models/single-beer.model';
 
 @Component({
   selector: 'app-single-beer-front',
@@ -7,7 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SingleBeerFrontComponent implements OnInit {
 
-  constructor() { }
+  subs: Subscription;
+
+  @Input() beer: SingleBeerModel
+
+  constructor() {}
 
   ngOnInit(): void {
   }
