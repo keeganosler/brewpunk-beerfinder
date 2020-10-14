@@ -7,4 +7,5 @@
     <p>{{ beer.description}}</p>
     <img src="{{ beer.imageUrl}}" [height]="400" [width]="100">
   </mat-card-content>
+  <mat-card-actions><button mat-stroked-button (click)="flipToBack.next()">{{ 'Show More Details ->'}}</button></mat-card-actions>
 </mat-card>

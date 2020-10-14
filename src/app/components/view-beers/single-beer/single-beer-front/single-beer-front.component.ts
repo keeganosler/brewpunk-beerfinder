@@ -1,7 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {StorageService} from '../../../../services/storage.service';
 import {Subscription} from 'rxjs';
 import {SingleBeerModel} from '../../../../models/single-beer.model';
+import {SingleBeerComponent} from '../single-beer.component';
 
 @Component({
   selector: 'app-single-beer-front',
@@ -11,12 +12,13 @@ import {SingleBeerModel} from '../../../../models/single-beer.model';
 export class SingleBeerFrontComponent implements OnInit {
 
   subs: Subscription;
-
   @Input() beer: SingleBeerModel
+  @Output() flipToBack = new EventEmitter()
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }

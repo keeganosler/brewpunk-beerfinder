@@ -30,6 +30,10 @@ export class SingleBeerComponent implements OnInit, OnDestroy {
     }
   }
 
+  getCurrentBeer(): SingleBeerModel {
+    return this.beer
+  }
+
   switchBackToFront() {
     this.singleBeerFront = !this.singleBeerFront
   }
