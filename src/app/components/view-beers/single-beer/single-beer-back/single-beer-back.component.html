@@ -1,1 +1,9 @@
-<p>single-beer-back works!</p>
+<mat-card *ngIf="beer" style="width: 85%; margin: 0 auto">
+  <mat-card-title>
+    {{ beer.name }}
+  </mat-card-title>
+  <mat-card-subtitle>{{ beer.tagline }}</mat-card-subtitle>
+  <mat-card-content>
+  </mat-card-content>
+  <mat-card-actions><button mat-stroked-button (click)="flipToFront.next()">{{ '<- Show Less'}}</button></mat-card-actions>
+</mat-card>

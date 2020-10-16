@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {SingleBeerModel} from '../../../../models/single-beer.model';
 
 @Component({
   selector: 'app-single-beer-back',
@@ -8,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class SingleBeerBackComponent implements OnInit {
 
   constructor() { }
+  @Input() beer: SingleBeerModel
+  @Output() flipToFront = new EventEmitter()
 
   ngOnInit(): void {
   }
