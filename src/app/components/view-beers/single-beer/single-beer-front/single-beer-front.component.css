@@ -1,0 +1,23 @@
+/*.stat-label {*/
+/*  > div:first-child {*/
+/*  font-size: 75%;*/
+
+/*  !*font-weight: $font-weight-normal;*!*/
+/*  !*color: $text-muted;*!*/
+/*  margin-bottom: 3px;*/
+/*  !*text-align: center;*!*/
+/*  !*line-height: 1.1;*!*/
+/*  }*/
+
+/*  > div:last-child {*/
+/*  font-size: 100%;*/
+/*  }*/
+/*}*/
+
+.stat-label:first-child {
+  font-size: 80px;
+  margin-right: 10%;
+}
+stat-label:last-child {
+  font-size: 100%
+}

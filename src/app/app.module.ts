@@ -16,6 +16,7 @@ import { SingleBeerBackComponent } from './components/view-beers/single-beer/sin
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import {MatDividerModule} from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import {MatCardModule} from '@angular/material/card';
     HttpClientModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

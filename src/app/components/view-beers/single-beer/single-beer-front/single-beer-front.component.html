@@ -1,11 +1,19 @@
-<mat-card *ngIf="beer" style="width: 85%; margin: 0 auto">
+<mat-card *ngIf="beer" style="max-width: 65%; margin: 0 auto">
   <mat-card-title>
     {{ beer.name }}
   </mat-card-title>
   <mat-card-subtitle>{{ beer.tagline }}</mat-card-subtitle>
   <mat-card-content>
-    <p>{{ beer.description}}</p>
-    <img src="{{ beer.imageUrl}}" [height]="400" [width]="100">
+    <div class="d-flex">
+      <div class="mr-5">
+        <h3>{{ beer.description}}</h3>
+        <mat-divider [inset]="true" class="mb-3"></mat-divider>
+        <div style=""><span><mat-icon>*</mat-icon>IBU</span>{{ beer.ibu }}</div>
+      </div>
+
+      <img mat-card-image class="mr-4" src="{{ beer.imageUrl}}" [style.height]="'400px'" [style.width]="'100px'">
+    </div>
+
   </mat-card-content>
   <mat-card-actions><button mat-stroked-button (click)="flipToBack.next()">{{ 'Show More Details ->'}}</button></mat-card-actions>
 </mat-card>
