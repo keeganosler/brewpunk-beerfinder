@@ -19,6 +19,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
+import {MatTab, MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import {MatIconModule} from '@angular/material/icon';
     MatCardModule,
     MatDividerModule,
     MatListModule,
-    MatIconModule
+    MatIconModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
