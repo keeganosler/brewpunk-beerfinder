@@ -5,7 +5,11 @@
   <mat-card-subtitle>{{ beer.tagline }}</mat-card-subtitle>
   <mat-card-content>
     <mat-tab-group>
-      <mat-tab label=""></mat-tab>
+      <mat-tab label="Stats">
+        <div>Content1</div>
+      </mat-tab>
+      <mat-tab label="Ingredients"><div>Content2</div></mat-tab>
+      <mat-tab label="How to Make"><div>Content3</div></mat-tab>
     </mat-tab-group>
   </mat-card-content>
   <mat-card-actions><button mat-stroked-button (click)="flipToFront.next()">{{ '<- Show Less'}}</button></mat-card-actions>
