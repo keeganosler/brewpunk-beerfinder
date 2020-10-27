@@ -1,3 +1,6 @@
+import {BeerIngredientsModel} from './beer-ingredients.model';
+import {BeerMethodModel} from './beer-method.model';
+
 export class SingleBeerModel {
 
   constructor(item: any = null) {
@@ -11,6 +14,13 @@ export class SingleBeerModel {
       this.ibu = item.ibu;
       this.abv = item.abv;
       this.imageUrl = item.image_url;
+      this.attenuationLevel = item.attenuation_level;
+      this.brewersTips = item.brewers_tips;
+      this.foodPairings = item.food_pairing;
+      this.ph = item.ph
+      this.srm = item.srm
+      this.ingredients = new BeerIngredientsModel(item.ingredients)
+      this.method = new  BeerMethodModel(item.method)
     }
   }
 
@@ -23,4 +33,11 @@ export class SingleBeerModel {
   ibu: number;
   abv: number;
   imageUrl: string;
+  attenuationLevel: number;
+  brewersTips: string;
+  foodPairings: string[];
+  ph: number;
+  srm: number;
+  ingredients: BeerIngredientsModel;
+  method: BeerMethodModel;
 }
