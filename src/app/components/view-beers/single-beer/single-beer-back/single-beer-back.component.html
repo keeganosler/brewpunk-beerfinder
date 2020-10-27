@@ -6,9 +6,25 @@
   <mat-card-content>
     <mat-tab-group>
       <mat-tab label="Stats">
-        <div>Content1</div>
+        <div #stats></div>
       </mat-tab>
-      <mat-tab label="Ingredients"><div>Content2</div></mat-tab>
+      <mat-tab label="Ingredients">
+        <div #ingredients class="d-flex justify-content-center">
+          <div>
+            <h2>Hops</h2>
+            <mat-list>
+              <mat-list-item *ngFor="let hop of beer.ingredients.hops">{{ hop.name }}</mat-list-item>
+            </mat-list>
+          </div>
+          <div>
+            <h2>Malt</h2>
+            <mat-list>
+              <mat-list-item *ngFor="let malt of beer.ingredients.malt">{{ malt.name }}</mat-list-item>
+            </mat-list>
+          </div>
+        </div>
+        <h2>Yeast: {{beer.ingredients.yeast}}</h2>
+      </mat-tab>
       <mat-tab label="How to Make"><div>Content3</div></mat-tab>
     </mat-tab-group>
   </mat-card-content>
