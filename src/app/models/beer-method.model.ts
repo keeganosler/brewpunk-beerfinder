@@ -10,7 +10,7 @@ export class BeerMethodModel {
     }
   }
 
-  public fermentation: AmountsModel;
-  public mashTemp: MashTempModel;
+  public fermentation: {temp:AmountsModel};
+  public mashTemp: MashTempModel[];
   public twist: string
 }
