@@ -1,5 +1,9 @@
 # BrewpunkBeerfinder
 
+This project utilzes the [Punk APi](https://punkapi.com/documentation/v2) to allow a user to find and view different beers using different filters and functions. This is just for fun and not meant to be practical :)
+
+--------------------------
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.4.
 
 ## Development server
