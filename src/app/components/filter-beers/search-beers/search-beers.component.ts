@@ -41,6 +41,9 @@ export class SearchBeersComponent implements OnInit, OnDestroy {
         this.storageService.beerPool.next(
           res.map((r) => new SingleBeerModel(r))
         );
+        this.storageService.currentBeer.next(
+          res.map((r) => new SingleBeerModel(r))[0]
+        );
       })
     );
   }
