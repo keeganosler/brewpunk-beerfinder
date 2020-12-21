@@ -14,6 +14,7 @@ export class BeersCarouselComponent implements OnInit {
     this.subs = new Subscription();
   }
   beerPool: SingleBeerModel[];
+  currentBeer: SingleBeerModel;
   startIndex: number = 0;
 
   ngOnInit(): void {
@@ -23,13 +24,19 @@ export class BeersCarouselComponent implements OnInit {
         this.beerPool = res;
       })
     );
+    this.subs.add(
+      this.storageService.currentBeer.subscribe((res) => {
+        this.currentBeer = res;
+      })
+    );
   }
 
   get carouselBeers() {
-    console.log(
-      'b: ',
-      this.beerPool?.slice(this.startIndex, this.startIndex + 8)
-    );
+    // console.log(
+    //   'current beer: ',
+    //   this.currentBeer,
+    //   this.beerPool?.slice(this.startIndex, this.startIndex + 8)[0]
+    // );
     return this.beerPool?.slice(this.startIndex, this.startIndex + 8);
   }
 }
