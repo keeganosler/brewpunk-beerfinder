@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { SingleBeerModel } from '../../../models/single-beer.model';
 import { StorageService } from '../../../services/storage.service';
 
 @Component({
@@ -12,12 +13,23 @@ export class BeersCarouselComponent implements OnInit {
   constructor(protected storageService: StorageService) {
     this.subs = new Subscription();
   }
+  beerPool: SingleBeerModel[];
+  startIndex: number = 0;
 
   ngOnInit(): void {
     this.subs.add(
       this.storageService.beerPool.subscribe((res) => {
-        console.log('beer pool: ', res);
+        //console.log('beer pool: ', res);
+        this.beerPool = res;
       })
     );
+  }
+
+  get carouselBeers() {
+    console.log(
+      'b: ',
+      this.beerPool?.slice(this.startIndex, this.startIndex + 8)
+    );
+    return this.beerPool?.slice(this.startIndex, this.startIndex + 8);
   }
 }

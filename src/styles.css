@@ -2,7 +2,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   background-color: black;
-  color:white;
+  color: white;
 }
 
 .header {
@@ -36,6 +36,7 @@ body {
   flex: 58%;
   height: 100vh;
   border: 1px solid black;
+  max-width: 58%;
 }
 
 .carousel {
@@ -47,5 +48,11 @@ body {
   border: 1px solid black;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
