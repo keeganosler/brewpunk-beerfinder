@@ -1,36 +1,35 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { Subscription } from 'rxjs';
 import { SingleBeerModel } from '../../../models/single-beer.model';
 import { ApiRequestsService } from '../../../services/api-requests.service';
 import { StorageService } from '../../../services/storage.service';
+import { FilterBeersComponent } from '../filter-beers.component';
 
 @Component({
   selector: 'app-search-beers',
   templateUrl: './search-beers.component.html',
   styleUrls: ['./search-beers.component.css'],
-  providers: [ApiRequestsService],
 })
-export class SearchBeersComponent implements OnInit, OnDestroy {
+export class SearchBeersComponent
+  extends FilterBeersComponent
+  implements OnInit, OnDestroy {
   constructor(
-    protected apiRequestsService: ApiRequestsService,
-    protected storageService: StorageService
+    public apiRequestsService: ApiRequestsService,
+    public storageService: StorageService
   ) {
-    this.subs = new Subscription();
+    super(apiRequestsService, storageService);
   }
 
   searchInput: FormControl;
-  subs: Subscription;
 
   ngOnInit(): void {
+    super.ngOnInit();
     this.searchInput = new FormControl();
     this.searchInput.valueChanges.subscribe((r) => this.onInputSearchText(r));
   }
 
   ngOnDestroy(): void {
-    if (this.subs) {
-      this.subs.unsubscribe();
-    }
+    super.ngOnDestroy();
   }
 
   onInputSearchText(str: string) {
