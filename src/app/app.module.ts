@@ -12,6 +12,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MultiRangeSliderModule } from '@vijayliebe/multi-range-slider';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FilterBeersComponent } from './components/filter-beers/filter-beers.component';
@@ -55,6 +56,7 @@ import { ViewBeersComponent } from './components/view-beers/view-beers.component
     MatSliderModule,
     FormsModule,
     ReactiveFormsModule,
+    MultiRangeSliderModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
