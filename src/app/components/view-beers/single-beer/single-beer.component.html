@@ -1,3 +1,10 @@
-<app-single-beer-front *ngIf="singleBeerFront" [beer]="beer" (flipToBack)="singleBeerFront = false"></app-single-beer-front>
-<app-single-beer-back *ngIf="!singleBeerFront" [beer]="beer" (flipToFront)="singleBeerFront = true"></app-single-beer-back>
-
+<app-single-beer-front
+  *ngIf="singleBeerFront"
+  [beer]="currentBeer"
+  (flipToBack)="singleBeerFront = false"
+></app-single-beer-front>
+<app-single-beer-back
+  *ngIf="!singleBeerFront"
+  [beer]="currentBeer"
+  (flipToFront)="singleBeerFront = true"
+></app-single-beer-back>
