@@ -34,16 +34,19 @@ export class SearchBeersComponent
 
   onInputSearchText(str: string) {
     console.log(str);
+    this.filterProperties.beer_name = str;
+    console.log('fp: ', this.filterProperties);
     this.subs.add(
-      this.apiRequestsService.searchBeerByString(str).subscribe((res) => {
-        console.log('beers: ', res);
-        this.storageService.beerPool.next(
-          res.map((r) => new SingleBeerModel(r))
-        );
-        this.storageService.currentBeer.next(
-          res.map((r) => new SingleBeerModel(r))[0]
-        );
-      })
+      this.apiRequestsService
+        .getFilteredBeers(this.filterProperties)
+        .subscribe((res) => {
+          this.storageService.beerPool.next(
+            res.map((r) => new SingleBeerModel(r))
+          );
+          this.storageService.currentBeer.next(
+            res.map((r) => new SingleBeerModel(r))[0]
+          );
+        })
     );
   }
 }

@@ -9,16 +9,9 @@ export class ApiRequestsService {
   apiUrl = environment.apiUrl;
 
   constructor(public http: HttpClient) {}
-  starterString: string = `${this.apiUrl}/beers?`;
 
   fetchRandomBeer() {
     return this.http.get<SingleBeerModel[]>(`${this.apiUrl}/beers/random`);
-  }
-
-  searchBeerByString(str: string) {
-    return this.http.get<SingleBeerModel[]>(
-      `${this.apiUrl}/beers?beer_name=${str}`
-    );
   }
 
   getFilteredBeers(filterProps: FilterPropertiesModel) {
@@ -30,9 +23,9 @@ export class ApiRequestsService {
       } else {
         str = str + `${prop}=${filterProps[prop]}`;
       }
-      console.log('str: ', str);
       i++;
     }
+    console.log('str: ', str);
     return this.http.get<SingleBeerModel[]>(str);
   }
 }

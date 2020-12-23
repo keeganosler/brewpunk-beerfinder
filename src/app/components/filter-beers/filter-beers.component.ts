@@ -18,19 +18,11 @@ export class FilterBeersComponent implements OnInit, OnDestroy {
     public storageService: StorageService
   ) {
     this.subs = new Subscription();
+    this.filterProperties = new FilterPropertiesModel();
   }
   beerPool: SingleBeerModel[];
   currentBeer: SingleBeerModel;
 
-  // filterProperties = {
-  //   beer_name: undefined,
-  //   abv_gt: undefined,
-  //   abv_let: undefined,
-  //   ibu_gt: undefined,
-  //   ibu_let: undefined,
-  //   ebc_gt: undefined,
-  //   ebc_let: undefined,
-  // };
   filterProperties: FilterPropertiesModel;
 
   ngOnInit(): void {
@@ -42,7 +34,6 @@ export class FilterBeersComponent implements OnInit, OnDestroy {
         (res) => (this.currentBeer = res)
       )
     );
-    this.filterProperties = new FilterPropertiesModel();
   }
 
   ngOnDestroy(): void {
@@ -67,10 +58,32 @@ export class FilterBeersComponent implements OnInit, OnDestroy {
   }
 
   applyIbuFilter(e: any) {
-    console.log('ibu: ', e);
+    this.filterProperties.ibu_gt = e - 2;
+    this.filterProperties.ibu_lt = e + 2;
+    this.apiRequestsService
+      .getFilteredBeers(this.filterProperties)
+      .subscribe((res) => {
+        this.storageService.beerPool.next(
+          res.map((r) => new SingleBeerModel(r))
+        );
+        this.storageService.currentBeer.next(
+          res.map((r) => new SingleBeerModel(r))[0]
+        );
+      });
   }
 
   applyEbcFilter(e: any) {
-    console.log('ebc: ', e);
+    this.filterProperties.ebc_gt = e - 2;
+    this.filterProperties.ebc_lt = e + 2;
+    this.apiRequestsService
+      .getFilteredBeers(this.filterProperties)
+      .subscribe((res) => {
+        this.storageService.beerPool.next(
+          res.map((r) => new SingleBeerModel(r))
+        );
+        this.storageService.currentBeer.next(
+          res.map((r) => new SingleBeerModel(r))[0]
+        );
+      });
   }
 }
