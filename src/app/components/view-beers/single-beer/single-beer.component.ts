@@ -17,28 +17,18 @@ export class SingleBeerComponent
     public apiRequestsService: ApiRequestsService,
     storageService: StorageService
   ) {
-    ///this.subs = new Subscription();
     super(apiRequestsService, storageService);
   }
 
   subs: Subscription;
-  // beer: SingleBeerModel;
 
   singleBeerFront: boolean = true;
 
   ngOnInit(): void {
-    // this.subs.add(
-    //   this.storageService.currentBeer.subscribe((b) => {
-    //     this.beer = b;
-    //   })
-    // );
     super.ngOnInit();
   }
 
   ngOnDestroy(): void {
-    // if (this.subs) {
-    //   this.subs.unsubscribe();
-    // }
     super.ngOnDestroy();
   }
 

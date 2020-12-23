@@ -1,42 +1,35 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { SingleBeerModel } from '../../../models/single-beer.model';
+import { ApiRequestsService } from '../../../services/api-requests.service';
 import { StorageService } from '../../../services/storage.service';
+import { ViewBeersComponent } from '../view-beers.component';
 
 @Component({
   selector: 'app-beers-carousel',
   templateUrl: './beers-carousel.component.html',
   styleUrls: ['./beers-carousel.component.css'],
 })
-export class BeersCarouselComponent implements OnInit {
+export class BeersCarouselComponent
+  extends ViewBeersComponent
+  implements OnInit, OnDestroy {
   subs: Subscription;
-  constructor(protected storageService: StorageService) {
-    this.subs = new Subscription();
+  constructor(
+    public storageService: StorageService,
+    public apiRequestsService: ApiRequestsService
+  ) {
+    super(apiRequestsService, storageService);
   }
-  beerPool: SingleBeerModel[];
-  currentBeer: SingleBeerModel;
   startIndex: number = 0;
 
   ngOnInit(): void {
-    this.subs.add(
-      this.storageService.beerPool.subscribe((res) => {
-        //console.log('beer pool: ', res);
-        this.beerPool = res;
-      })
-    );
-    this.subs.add(
-      this.storageService.currentBeer.subscribe((res) => {
-        this.currentBeer = res;
-      })
-    );
+    super.ngOnInit();
+  }
+
+  ngOnDestroy(): void {
+    super.ngOnDestroy();
   }
 
   get carouselBeers() {
-    // console.log(
-    //   'current beer: ',
-    //   this.currentBeer,
-    //   this.beerPool?.slice(this.startIndex, this.startIndex + 8)[0]
-    // );
     return this.beerPool?.slice(this.startIndex, this.startIndex + 8);
   }
 }

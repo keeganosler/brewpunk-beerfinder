@@ -23,12 +23,15 @@ export class ViewBeersComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.subs.add(
-      this.storageService.beerPool.subscribe((res) => (this.beerPool = res))
+      this.storageService.beerPool.subscribe((res) => {
+        console.log('here');
+        this.beerPool = res;
+      })
     );
     this.subs.add(
-      this.storageService.currentBeer.subscribe(
-        (res) => (this.currentBeer = res)
-      )
+      this.storageService.currentBeer.subscribe((res) => {
+        this.currentBeer = res;
+      })
     );
   }
 
