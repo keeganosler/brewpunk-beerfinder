@@ -13,8 +13,10 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MultiRangeSliderModule } from '@vijayliebe/multi-range-slider';
+import { NouisliderModule } from 'ng2-nouislider';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BeerPropSliderComponent } from './components/filter-beers/beer-prop-slider/beer-prop-slider.component';
 import { FilterBeersComponent } from './components/filter-beers/filter-beers.component';
 import { RandomBeerComponent } from './components/filter-beers/random-beer/random-beer.component';
 import { SearchBeersComponent } from './components/filter-beers/search-beers/search-beers.component';
@@ -25,7 +27,6 @@ import { SingleBeerBackComponent } from './components/view-beers/single-beer/sin
 import { SingleBeerFrontComponent } from './components/view-beers/single-beer/single-beer-front/single-beer-front.component';
 import { SingleBeerComponent } from './components/view-beers/single-beer/single-beer.component';
 import { ViewBeersComponent } from './components/view-beers/view-beers.component';
-import { BeerPropSliderComponent } from './components/filter-beers/beer-prop-slider/beer-prop-slider.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { BeerPropSliderComponent } from './components/filter-beers/beer-prop-sli
     FormsModule,
     ReactiveFormsModule,
     MultiRangeSliderModule,
+    NouisliderModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -37,4 +37,16 @@ export class FilterBeersComponent implements OnInit, OnDestroy {
       this.subs.unsubscribe();
     }
   }
+
+  applyAbvFilter(e: any) {
+    console.log('abv: ', e);
+  }
+
+  applyIbuFilter(e: any) {
+    console.log('ibu: ', e);
+  }
+
+  applyEbcFilter(e: any) {
+    console.log('ebc: ', e);
+  }
 }

@@ -1,6 +1,17 @@
 <app-search-beers></app-search-beers>
-<app-beer-prop-slider></app-beer-prop-slider>
-<app-beer-prop-slider></app-beer-prop-slider>
-<app-beer-prop-slider></app-beer-prop-slider>
+<app-beer-prop-slider
+  [minimum]="5"
+  [maximum]="10"
+  (toggleChange)="applyAbvFilter($event)"
+></app-beer-prop-slider>
+<app-beer-prop-slider
+  [minimum]="5"
+  [maximum]="10"
+  (toggleChange)="applyIbuFilter($event)"
+></app-beer-prop-slider>
+<app-beer-prop-slider
+  [minimum]="5"
+  [maximum]="10"
+  (toggleChange)="applyEbcFilter($event)"
+></app-beer-prop-slider>
 <app-random-beer></app-random-beer>
-<!-- <app-multi-range-slider></app-multi-range-slider> -->
