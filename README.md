@@ -1,6 +1,6 @@
 # BrewpunkBeerfinder
 
-This project utilzes the [Punk API](https://punkapi.com/documentation/v2) to allow a user to find and view different beers using different filters and functions. This is just for fun and not meant to be practical :)
+This project utilizes the [Punk API](https://punkapi.com/documentation/v2) to allow a user to find and view different beers using different filters and functions. This is just for fun and not meant to be practical :)
 
 --------------------------
 
