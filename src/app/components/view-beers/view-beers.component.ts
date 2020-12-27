@@ -44,27 +44,19 @@ export class ViewBeersComponent implements OnInit, OnDestroy {
 
   onPreviousBeer() {
     if (this.currentBeerIndex === 0) {
-      this.currentBeerIndex = 7;
+      this.currentBeerIndex = this.beerPool.length - 1;
     } else {
       this.currentBeerIndex--;
     }
-    this.storageService.currentBeer.next(
-      this.beerPool?.slice(this.startIndex, this.startIndex + 8)[
-        this.currentBeerIndex
-      ]
-    );
+    this.storageService.currentBeer.next(this.beerPool[this.currentBeerIndex]);
   }
 
   onNextBeer() {
-    if (this.currentBeerIndex === 7) {
+    if (this.currentBeerIndex === this.beerPool.length - 1) {
       this.currentBeerIndex = 0;
     } else {
       this.currentBeerIndex++;
     }
-    this.storageService.currentBeer.next(
-      this.beerPool?.slice(this.startIndex, this.startIndex + 8)[
-        this.currentBeerIndex
-      ]
-    );
+    this.storageService.currentBeer.next(this.beerPool[this.currentBeerIndex]);
   }
 }
