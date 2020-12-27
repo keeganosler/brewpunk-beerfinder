@@ -20,11 +20,12 @@ export class ViewBeersComponent implements OnInit, OnDestroy {
   }
   beerPool: SingleBeerModel[];
   currentBeer: SingleBeerModel;
+  startIndex: number = 0;
+  currentBeerIndex: number = 0;
 
   ngOnInit(): void {
     this.subs.add(
       this.storageService.beerPool.subscribe((res) => {
-        console.log('here');
         this.beerPool = res;
       })
     );
@@ -39,5 +40,31 @@ export class ViewBeersComponent implements OnInit, OnDestroy {
     if (this.subs) {
       this.subs.unsubscribe();
     }
+  }
+
+  onPreviousBeer() {
+    if (this.currentBeerIndex === 0) {
+      this.currentBeerIndex = 7;
+    } else {
+      this.currentBeerIndex--;
+    }
+    this.storageService.currentBeer.next(
+      this.beerPool?.slice(this.startIndex, this.startIndex + 8)[
+        this.currentBeerIndex
+      ]
+    );
+  }
+
+  onNextBeer() {
+    if (this.currentBeerIndex === 7) {
+      this.currentBeerIndex = 0;
+    } else {
+      this.currentBeerIndex++;
+    }
+    this.storageService.currentBeer.next(
+      this.beerPool?.slice(this.startIndex, this.startIndex + 8)[
+        this.currentBeerIndex
+      ]
+    );
   }
 }

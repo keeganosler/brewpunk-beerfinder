@@ -19,7 +19,6 @@ export class BeersCarouselComponent
   ) {
     super(apiRequestsService, storageService);
   }
-  startIndex: number = 0;
 
   ngOnInit(): void {
     super.ngOnInit();

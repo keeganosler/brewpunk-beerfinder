@@ -1,7 +1,7 @@
 <app-beers-carousel></app-beers-carousel>
 <app-beers-list></app-beers-list>
 <div class="d-flex align-items-center justify-content-center p-2">
-  <button mat-mini-fab><</button>
+  <button mat-mini-fab (click)="onPreviousBeer()"><</button>
   <app-single-beer></app-single-beer>
-  <button mat-mini-fab>></button>
+  <button mat-mini-fab (click)="onNextBeer()">></button>
 </div>
