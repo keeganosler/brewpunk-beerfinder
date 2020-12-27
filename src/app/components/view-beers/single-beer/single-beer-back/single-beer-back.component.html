@@ -7,32 +7,65 @@
     <mat-tab-group>
       <mat-tab label="Stats">
         <div #stats></div>
-        <mat-list-item
+        <mat-list-item>
+          {{ beer.abv }}
+        </mat-list-item>
+        <mat-list-item>
+          {{ beer.ebc }}
+        </mat-list-item>
+        <mat-list-item>
+          {{ beer.ibu }}
+        </mat-list-item>
+        <mat-list-item>
+          {{ beer.srm }}
+        </mat-list-item>
+        <mat-list-item>
+          {{ beer.ph }}
+        </mat-list-item>
+        <h2>Food Pairings:</h2>
+        <P *ngFor="let foodPairing of beer.foodPairings">{{ foodPairing }}</P>
       </mat-tab>
       <mat-tab label="Ingredients">
         <div #ingredients class="d-flex justify-content-center">
           <div>
             <h2>Hops</h2>
             <mat-list>
-              <mat-list-item *ngFor="let hop of beer.ingredients.hops">{{ hop.name }}</mat-list-item>
+              <mat-list-item *ngFor="let hop of beer.ingredients.hops">{{
+                hop.name
+              }}</mat-list-item>
             </mat-list>
           </div>
           <div>
             <h2>Malt</h2>
             <mat-list>
-              <mat-list-item *ngFor="let malt of beer.ingredients.malt">{{ malt.name }}</mat-list-item>
+              <mat-list-item *ngFor="let malt of beer.ingredients.malt">{{
+                malt.name
+              }}</mat-list-item>
             </mat-list>
           </div>
         </div>
-        <h2>Yeast: {{beer.ingredients.yeast}}</h2>
+        <h2>Yeast: {{ beer.ingredients.yeast }}</h2>
       </mat-tab>
-      <mat-tab label="How to Make"><div #method>
-        <h2>Fermentation: {{beer.method.fermentation.temp.value}}{{beer.method.fermentation.temp.unit}}</h2>
-        <h2>Mash</h2>
-        <div *ngFor="let m of beer.method.mashTemp">{{m.duration}}<span class="small">at</span>{{m.temp.value}}{{m.temp.unit}}</div>
-        <h2 *ngIf="beer.method.twist">Twist: {{ beer.method.twist}}</h2>
-      </div></mat-tab>
+      <mat-tab label="How to Make"
+        ><div #method>
+          <h2>
+            Fermentation: {{ beer.method.fermentation.temp.value
+            }}{{ beer.method.fermentation.temp.unit }}
+          </h2>
+          <h2>Mash</h2>
+          <div *ngFor="let m of beer.method.mashTemp">
+            {{ m.duration }}<span class="small">at</span>{{ m.temp.value
+            }}{{ m.temp.unit }}
+          </div>
+          <h2 *ngIf="beer.method.twist">Twist: {{ beer.method.twist }}</h2>
+          <h2>Brewers Tips: {{ beer.brewersTips }}</h2>
+        </div></mat-tab
+      >
     </mat-tab-group>
   </mat-card-content>
-  <mat-card-actions><button mat-stroked-button (click)="flipToFront.next()">{{ '<- Show Less'}}</button></mat-card-actions>
+  <mat-card-actions
+    ><button mat-stroked-button (click)="flipToFront.next()">
+      {{ "<- Show Less" }}
+    </button></mat-card-actions
+  >
 </mat-card>
