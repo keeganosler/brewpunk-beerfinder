@@ -61,7 +61,11 @@ export class ViewBeersComponent implements OnInit, OnDestroy {
   }
 
   onMoveCarouselBack() {
-    //if (this.startIndex ===)
+    if (this.startIndex === 0) {
+      this.startIndex = this.beerPool.length - 1;
+    } else {
+      this.startIndex--;
+    }
   }
 
   onMoveCarouselForward() {
