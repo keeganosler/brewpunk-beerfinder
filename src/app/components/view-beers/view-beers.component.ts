@@ -59,4 +59,16 @@ export class ViewBeersComponent implements OnInit, OnDestroy {
     }
     this.storageService.currentBeer.next(this.beerPool[this.currentBeerIndex]);
   }
+
+  onMoveCarouselBack() {
+    //if (this.startIndex ===)
+  }
+
+  onMoveCarouselForward() {
+    if (this.startIndex === this.beerPool.length - 1) {
+      this.startIndex = 0;
+    } else {
+      this.startIndex++;
+    }
+  }
 }

@@ -1,9 +1,15 @@
-<div class="carousel-wrapper d-flex align-items-center justify-content-between">
+<div class="d-flex">
+  <button mat-button><</button>
   <div
-    class="carousel-item"
-    *ngFor="let beer of carouselBeers"
-    [ngClass]="{ 'carousel-item-active': beer.id === currentBeer.id }"
+    class="carousel-wrapper d-flex align-items-center justify-content-between"
   >
-    {{ beer.name }}
+    <div
+      class="carousel-item"
+      *ngFor="let beer of carouselBeers"
+      [ngClass]="{ 'carousel-item-active': beer.id === currentBeer.id }"
+    >
+      {{ beer.name }}
+    </div>
   </div>
+  <button mat-button (click)="onMoveCarouselForward()">></button>
 </div>
