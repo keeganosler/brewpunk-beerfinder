@@ -1,4 +1,33 @@
-.carousel-wrapper {
+.carousel-parent-container {
+  position: relative;
+}
+
+.carousel-button-left,
+.carousel-button-right {
+  position: absolute;
+  z-index: 10 !important;
+  top: 0;
+  height: 100%;
+  width: 10px;
+  min-width: unset !important;
+  background-color: rgba(255, 255, 255, 0.12);
+  color: white;
+  border-radius: 0px;
+}
+
+.carousel-button-left:hover,
+.carousel-button-right:hover {
+  border: 1px solid white;
+}
+
+.carousel-button-left {
+  left: 0;
+}
+.carousel-button-right {
+  right: 0;
+}
+
+.carousel-items-wrapper {
   max-width: 100%;
   width: 100%;
   height: 100px;

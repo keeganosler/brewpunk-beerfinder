@@ -1,8 +1,14 @@
-<div class="d-flex">
-  <button mat-button (click)="onMoveCarouselBack()"><</button>
+<div class="d-flex carousel-parent-container">
+  <button
+    mat-stroked-button
+    (click)="onMoveCarouselBack()"
+    class="carousel-button-left"
+  >
+    <
+  </button>
   <div
     *ngIf="beerPool"
-    class="carousel-wrapper d-flex align-items-center justify-content-between"
+    class="carousel-items-wrapper d-flex align-items-center justify-content-between"
   >
     <div
       class="carousel-item"
@@ -12,5 +18,11 @@
       {{ beer.name }}
     </div>
   </div>
-  <button mat-button (click)="onMoveCarouselForward()">></button>
+  <button
+    mat-stroked-button
+    (click)="onMoveCarouselForward()"
+    class="carousel-button-right"
+  >
+    >
+  </button>
 </div>
