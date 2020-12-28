@@ -86,4 +86,17 @@ export class FilterBeersComponent implements OnInit, OnDestroy {
         );
       });
   }
+
+  getRandomBeer() {
+    this.subs.add(
+      this.apiRequestsService.fetchRandomBeer().subscribe((res) => {
+        this.storageService.currentBeer.next(
+          res.map((r) => new SingleBeerModel(r))[0]
+        );
+        this.storageService.beerPool.next(
+          res.map((r) => new SingleBeerModel(r))
+        );
+      })
+    );
+  }
 }

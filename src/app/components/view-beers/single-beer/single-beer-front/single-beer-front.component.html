@@ -6,16 +6,35 @@
   <mat-card-content>
     <div class="d-flex">
       <div class="mr-5">
-        <h3>{{ beer.description}}</h3>
+        <h3>{{ beer.description }}</h3>
         <mat-divider [inset]="true" class="mb-3"></mat-divider>
         <mat-list>
-          <mat-list-item><mat-icon mat-list-icon>*</mat-icon>ABV: {{ beer.abv }}</mat-list-item>
-          <mat-list-item><mat-icon mat-list-icon>*</mat-icon>IBU: {{ beer.ibu }}</mat-list-item>
-          <mat-list-item><mat-icon mat-list-icon>*</mat-icon>EBC: {{ beer.ebc }}</mat-list-item>
+          <mat-list-item
+            ><mat-icon mat-list-icon>*</mat-icon>ABV:
+            {{ beer.abv }}</mat-list-item
+          >
+          <mat-list-item
+            ><mat-icon mat-list-icon>*</mat-icon>IBU:
+            {{ beer.ibu }}</mat-list-item
+          >
+          <mat-list-item
+            ><mat-icon mat-list-icon>*</mat-icon>EBC:
+            {{ beer.ebc }}</mat-list-item
+          >
         </mat-list>
       </div>
-      <img mat-card-image class="mr-4" src="{{ beer.imageUrl}}" [style.height]="'400px'" [style.width]="'100px'">
+      <img
+        mat-card-image
+        class="mr-4"
+        src="{{ beer.imageUrl }}"
+        [style.height]="'400px'"
+        [style.width]="'100px'"
+      />
     </div>
   </mat-card-content>
-  <mat-card-actions><button mat-stroked-button (click)="flipToBack.next()">{{ 'Show More Details ->'}}</button></mat-card-actions>
+  <mat-card-actions
+    ><button mat-stroked-button (click)="flipToBack.next()">
+      {{ "Show More Details ->" }}
+    </button></mat-card-actions
+  >
 </mat-card>

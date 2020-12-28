@@ -1,5 +1,4 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { SingleBeerModel } from '../../../models/single-beer.model';
 import { ApiRequestsService } from '../../../services/api-requests.service';
 import { StorageService } from '../../../services/storage.service';
 import { FilterBeersComponent } from '../filter-beers.component';
@@ -22,20 +21,10 @@ export class RandomBeerComponent
 
   ngOnInit(): void {
     super.ngOnInit();
+    this.getRandomBeer();
   }
 
   ngOnDestroy(): void {
     super.ngOnDestroy();
-  }
-
-  getRandomBeer() {
-    this.subs.add(
-      this.apiRequestsService.fetchRandomBeer().subscribe((res) => {
-        console.log('random beer: ', res);
-        this.storageService.currentBeer.next(
-          res.map((r) => new SingleBeerModel(r))[0]
-        );
-      })
-    );
   }
 }
