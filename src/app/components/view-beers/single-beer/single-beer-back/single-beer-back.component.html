@@ -1,29 +1,43 @@
-<mat-card *ngIf="beer" style="max-width: 90%; max-height: 90%; margin: 0 auto">
+<mat-card *ngIf="beer" style="max-width: 90%; margin: 0 auto">
   <mat-card-title>
     {{ beer.name }}
   </mat-card-title>
   <mat-card-subtitle>{{ beer.tagline }}</mat-card-subtitle>
-  <mat-card-content>
+  <mat-card-content style="height: 100%">
     <mat-tab-group>
       <mat-tab label="Stats">
-        <!-- <div #stats></div>
-        <mat-list-item>
-          {{ beer.abv }}
-        </mat-list-item>
-        <mat-list-item>
-          {{ beer.ebc }}
-        </mat-list-item>
-        <mat-list-item>
-          {{ beer.ibu }}
-        </mat-list-item>
-        <mat-list-item>
-          {{ beer.srm }}
-        </mat-list-item>
-        <mat-list-item>
-          {{ beer.ph }}
-        </mat-list-item>
-        <h2>Food Pairings:</h2>
-        <P *ngFor="let foodPairing of beer.foodPairings">{{ foodPairing }}</P> -->
+        <mat-grid-list cols="2" rowHeight="2:1" style="height: 375px">
+          <mat-grid-tile class="stats-grid-tile">
+            <div>
+              <p style="top: 0; left: 0">ABV</p>
+              <h1>{{ beer.abv }}</h1>
+            </div></mat-grid-tile
+          >
+          <mat-grid-tile class="stats-grid-tile"
+            ><p>EBC</p>
+            <h1>{{ beer.ebc }}</h1></mat-grid-tile
+          >
+          <mat-grid-tile class="stats-grid-tile"
+            ><p>IBU</p>
+            <h1>{{ beer.ibu }}</h1></mat-grid-tile
+          >
+          <mat-grid-tile class="stats-grid-tile"
+            ><p>SRM</p>
+            <h1>{{ beer.srm }}</h1></mat-grid-tile
+          >
+          <mat-grid-tile class="stats-grid-tile"
+            ><p>pH</p>
+            <h1>{{ beer.ph }}</h1></mat-grid-tile
+          >
+          <mat-grid-tile class="stats-grid-tile"
+            ><div>
+              <p>Food Pairings</p>
+              <p *ngFor="let food of beer.foodPairings">
+                {{ food }}
+              </p>
+            </div></mat-grid-tile
+          >
+        </mat-grid-list>
       </mat-tab>
       <mat-tab label="Ingredients">
         <div #ingredients class="d-flex justify-content-center">

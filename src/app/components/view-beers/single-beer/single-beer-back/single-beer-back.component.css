@@ -1,0 +1,8 @@
+.stats-grid-tile {
+  height: 33%;
+  width: 50%;
+  margin: 0px 10px 10px 0px;
+  border: 1px solid black;
+  background-color: white;
+  color: black;
+}
