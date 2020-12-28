@@ -39,26 +39,42 @@
           >
         </mat-grid-list>
       </mat-tab>
-      <mat-tab label="Ingredients">
-        <div #ingredients class="d-flex justify-content-center">
+      <mat-tab label="Ingredients" style="height: 375px">
+        <div #ingredients class="d-flex justify-content-start">
           <div>
             <h2>Hops</h2>
             <mat-list>
-              <mat-list-item *ngFor="let hop of beer.ingredients.hops">{{
-                hop.name
-              }}</mat-list-item>
+              <mat-list-item *ngFor="let hop of beer.ingredients.hops">
+                <mat-icon mat-list-icon>*</mat-icon>
+                <div mat-line>
+                  {{ hop.name }} ({{ hop.amount.value }}
+                  {{ hop.amount.unit === "kilograms" ? "kg" : "g" }})
+                </div>
+              </mat-list-item>
             </mat-list>
           </div>
           <div>
             <h2>Malt</h2>
             <mat-list>
-              <mat-list-item *ngFor="let malt of beer.ingredients.malt">{{
-                malt.name
-              }}</mat-list-item>
+              <mat-list-item *ngFor="let malt of beer.ingredients.malt">
+                <mat-icon mat-list-icon>*</mat-icon>
+                <div mat-line>
+                  {{ malt.name }} ({{ malt.amount.value }}
+                  {{ malt.amount.unit === "kilograms" ? "kg" : "g" }})
+                </div>
+              </mat-list-item>
+            </mat-list>
+            <h2>Yeast</h2>
+            <mat-list>
+              <mat-list-item>
+                <mat-icon mat-list-icon>*</mat-icon>
+                <div mat-line>
+                  {{ beer.ingredients.yeast }}
+                </div>
+              </mat-list-item>
             </mat-list>
           </div>
         </div>
-        <h2>Yeast: {{ beer.ingredients.yeast }}</h2>
       </mat-tab>
       <mat-tab label="How to Make"
         ><div #method>
