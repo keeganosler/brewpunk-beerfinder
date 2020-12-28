@@ -1,4 +1,4 @@
-<mat-card *ngIf="beer" style="width: 85%; margin: 0 auto">
+<mat-card *ngIf="beer" style="max-width: 90%; max-height: 90%; margin: 0 auto">
   <mat-card-title>
     {{ beer.name }}
   </mat-card-title>
@@ -6,7 +6,7 @@
   <mat-card-content>
     <mat-tab-group>
       <mat-tab label="Stats">
-        <div #stats></div>
+        <!-- <div #stats></div>
         <mat-list-item>
           {{ beer.abv }}
         </mat-list-item>
@@ -23,7 +23,7 @@
           {{ beer.ph }}
         </mat-list-item>
         <h2>Food Pairings:</h2>
-        <P *ngFor="let foodPairing of beer.foodPairings">{{ foodPairing }}</P>
+        <P *ngFor="let foodPairing of beer.foodPairings">{{ foodPairing }}</P> -->
       </mat-tab>
       <mat-tab label="Ingredients">
         <div #ingredients class="d-flex justify-content-center">
