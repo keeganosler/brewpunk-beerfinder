@@ -6,8 +6,8 @@
   <p style="margin-block-start: 1em">{{ beerSliderLeftLabels[prop] }}</p>
   <div class="d-flex justify-content-center">
     <mat-slider
-      min="1"
-      max="10"
+      min="{{ beerSliderMin[prop] }}"
+      max="{{ beerSliderMax[prop] }}"
       step="1"
       value="8"
       #slider

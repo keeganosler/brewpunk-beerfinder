@@ -44,8 +44,18 @@ export class BeerPropSliderComponent
     ebc: 'Dark',
   };
 
-  @Input() minimum: number;
-  @Input() maximum: number;
+  beerSliderMin = {
+    abv: 2,
+    ibu: 10,
+    ebc: 4,
+  };
+
+  beerSliderMax = {
+    abv: 10,
+    ibu: 100,
+    ebc: 80,
+  };
+
   @Input() prop: string;
   @Output() toggleChange = new EventEmitter();
   sliderFormControl: FormControl;
@@ -64,6 +74,7 @@ export class BeerPropSliderComponent
   }
 
   onSlide(val: number) {
+    console.log('val: ', val);
     this.toggleChange.next(val);
   }
 }
