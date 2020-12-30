@@ -11,11 +11,17 @@
     class="carousel-items-wrapper d-flex align-items-center justify-content-between"
   >
     <div
-      class="carousel-item"
+      class="carousel-item d-flex align-items-center justify-content-center"
       *ngFor="let beer of carouselBeers"
       [ngClass]="{ 'carousel-item-active': beer.id === currentBeer.id }"
     >
-      {{ beer.name }}
+      <img
+        src="{{ beer.imageUrl }}"
+        [style.minHeight]="'40px'"
+        [style.minWidth]="'10px'"
+        [style.maxHeight]="'40px'"
+        [style.maxWidth]="'10px'"
+      />
     </div>
   </div>
   <button

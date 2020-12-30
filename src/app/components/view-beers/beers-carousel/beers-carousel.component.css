@@ -10,7 +10,7 @@
   height: 100%;
   width: 10px;
   min-width: unset !important;
-  background-color: rgba(255, 255, 255, 0.12);
+  background-color: #424242;
   color: white;
   border-radius: 0px;
 }
@@ -38,10 +38,10 @@
   display: block;
   width: 20%;
   height: 75px;
-  border: 1px solid white;
+  border: 1px solid #424242;
   margin: 0px;
 }
 
 .carousel-item-active {
-  border: 1px solid red !important;
+  border: 1px solid white;
 }
