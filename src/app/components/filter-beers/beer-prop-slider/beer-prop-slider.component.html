@@ -1,8 +1,9 @@
+<p class="small text-center mb-0">{{ beerSliderTopLabels[prop] }}</p>
 <div
   class="d-flex justify-content-center align-item-center"
   style="height: 15%; width: 100%"
 >
-  <p style="margin-block-start: 1em">start</p>
+  <p style="margin-block-start: 1em">{{ beerSliderLeftLabels[prop] }}</p>
   <div class="d-flex justify-content-center">
     <mat-slider
       min="1"
@@ -14,5 +15,5 @@
       [formControl]="sliderFormControl"
     ></mat-slider>
   </div>
-  <p style="margin-block-start: 1em">end</p>
+  <p style="margin-block-start: 1em">{{ beerSliderRightLabels[prop] }}</p>
 </div>

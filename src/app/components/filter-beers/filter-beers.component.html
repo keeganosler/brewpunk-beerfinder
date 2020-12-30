@@ -7,15 +7,18 @@
 <app-beer-prop-slider
   [minimum]="5"
   [maximum]="10"
+  [prop]="'abv'"
   (toggleChange)="applyAbvFilter($event)"
 ></app-beer-prop-slider>
 <app-beer-prop-slider
   [minimum]="5"
   [maximum]="10"
+  [prop]="'ibu'"
   (toggleChange)="applyIbuFilter($event)"
 ></app-beer-prop-slider>
 <app-beer-prop-slider
   [minimum]="5"
   [maximum]="10"
+  [prop]="'ebc'"
   (toggleChange)="applyEbcFilter($event)"
 ></app-beer-prop-slider>

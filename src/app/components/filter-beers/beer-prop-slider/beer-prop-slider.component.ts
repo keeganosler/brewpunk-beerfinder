@@ -26,8 +26,27 @@ export class BeerPropSliderComponent
     super(apiRequestsService, storageService);
   }
 
+  beerSliderTopLabels = {
+    abv: 'How Alcoholic do you like your Beer?',
+    ibu: 'How Bitter do you like your Beer?',
+    ebc: 'What Colour do you like your Beer?',
+  };
+
+  beerSliderLeftLabels = {
+    abv: 'Weak',
+    ibu: 'Mild',
+    ebc: 'Light',
+  };
+
+  beerSliderRightLabels = {
+    abv: 'Strong',
+    ibu: 'Bitter',
+    ebc: 'Dark',
+  };
+
   @Input() minimum: number;
   @Input() maximum: number;
+  @Input() prop: string;
   @Output() toggleChange = new EventEmitter();
   sliderFormControl: FormControl;
 
