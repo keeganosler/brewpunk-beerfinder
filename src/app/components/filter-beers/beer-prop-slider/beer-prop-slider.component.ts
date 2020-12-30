@@ -5,6 +5,7 @@ import {
   OnDestroy,
   OnInit,
   Output,
+  ViewEncapsulation,
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ApiRequestsService } from '../../../services/api-requests.service';
@@ -15,6 +16,7 @@ import { FilterBeersComponent } from '../filter-beers.component';
   selector: 'app-beer-prop-slider',
   templateUrl: './beer-prop-slider.component.html',
   styleUrls: ['./beer-prop-slider.component.css'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class BeerPropSliderComponent
   extends FilterBeersComponent
@@ -74,7 +76,6 @@ export class BeerPropSliderComponent
   }
 
   onSlide(val: number) {
-    console.log('val: ', val);
     this.toggleChange.next(val);
   }
 }
