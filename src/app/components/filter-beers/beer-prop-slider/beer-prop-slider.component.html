@@ -1,11 +1,18 @@
-<div class="d-flex justify-content-center">
-  <mat-slider
-    min="1"
-    max="10"
-    step="1"
-    value="8"
-    #slider
-    (input)="sliderFormControl.setValue(slider.value)"
-    [formControl]="sliderFormControl"
-  ></mat-slider>
+<div
+  class="d-flex justify-content-center align-item-center"
+  style="height: 15%; width: 100%"
+>
+  <p style="margin-block-start: 1em">start</p>
+  <div class="d-flex justify-content-center">
+    <mat-slider
+      min="1"
+      max="10"
+      step="1"
+      value="8"
+      #slider
+      (input)="sliderFormControl.setValue(slider.value)"
+      [formControl]="sliderFormControl"
+    ></mat-slider>
+  </div>
+  <p style="margin-block-start: 1em">end</p>
 </div>
