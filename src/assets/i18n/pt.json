@@ -1,3 +1,8 @@
 {
-  "headerTestText": "Este é o teste de texto do cabeçalho em português"
+  "headerTestText": "Este é o teste de texto do cabeçalho em português",
+  "headerTitle": "BrewPunk Localizador de Cerveja",
+  "headerSubtitle": {
+    "subtitle1": "Este projeto foi feito por",
+    "subtitle2": "usando a"
+  }
 }

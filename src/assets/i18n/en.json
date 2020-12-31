@@ -1,3 +1,8 @@
 {
-  "headerTestText": "This is the header text test in English"
+  "headerTestText": "This is the header text test in English",
+  "headerTitle": "BrewPunk Beerfinder",
+  "headerSubtitle": {
+    "subtitle1": "This project was made by",
+    "subtitle2": "using the"
+  }
 }

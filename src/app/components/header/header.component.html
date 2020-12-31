@@ -1,9 +1,10 @@
-<h1>BREWPUNK BEERFINDER</h1>
-<p *transloco="let t; lang: 'pt'">{{ t("headerTestText") }}</p>
+<h1 *transloco="let t; lang: this.browserLanguage">{{ t("headerTitle") }}</h1>
+<!-- <p *transloco="let t; lang: 'pt'">{{ t("headerTestText") }}</p> -->
 <p>
-  <i
-    >This project was made by
-    <a href="https://github.com/keeganosler">@keeganosler</a> using the
+  <i *transloco="let t; lang: this.browserLanguage"
+    >{{ t("headerSubtitle.subtitle1") }}
+    <a href="https://github.com/keeganosler">@keeganosler</a>
+    {{ t("headerSubtitle.subtitle2") }}
     <a href="https://punkapi.com/documentation/v2">Punk API</a>.</i
   >
 </p>
