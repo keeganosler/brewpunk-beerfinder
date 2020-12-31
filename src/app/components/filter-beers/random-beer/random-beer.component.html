@@ -1,4 +1,13 @@
-<div style="width: 100%;" class="d-flex align-items-center justify-content-center">
-  <button mat-raised-button color="accent" (click)="getRandomBeer()">Random Beer</button>
+<div
+  style="width: 100%"
+  class="d-flex align-items-center justify-content-center"
+>
+  <button
+    mat-raised-button
+    color="accent"
+    (click)="getRandomBeer()"
+    *transloco="let t; lang: this.browserLanguage"
+  >
+    {{ t("randomBeerLabel") }}
+  </button>
 </div>
-
