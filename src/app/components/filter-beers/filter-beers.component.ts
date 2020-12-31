@@ -4,6 +4,7 @@ import { FilterPropertiesModel } from '../../models/filter-properties.model';
 import { SingleBeerModel } from '../../models/single-beer.model';
 import { ApiRequestsService } from '../../services/api-requests.service';
 import { StorageService } from '../../services/storage.service';
+import { TranslationService } from '../../services/translation.service';
 
 @Component({
   selector: 'app-filter-beers',
@@ -12,10 +13,12 @@ import { StorageService } from '../../services/storage.service';
   providers: [ApiRequestsService],
 })
 export class FilterBeersComponent implements OnInit, OnDestroy {
+  browserLanguage: string;
   subs: Subscription;
   constructor(
     public apiRequestsService: ApiRequestsService,
-    public storageService: StorageService
+    public storageService: StorageService,
+    public translationService: TranslationService
   ) {
     this.subs = new Subscription();
     this.filterProperties = new FilterPropertiesModel();
@@ -32,6 +35,11 @@ export class FilterBeersComponent implements OnInit, OnDestroy {
     this.subs.add(
       this.storageService.currentBeer.subscribe(
         (res) => (this.currentBeer = res)
+      )
+    );
+    this.subs.add(
+      this.translationService.browserLanguage.subscribe(
+        (res) => (this.browserLanguage = res)
       )
     );
   }

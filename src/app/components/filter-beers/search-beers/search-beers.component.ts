@@ -3,6 +3,7 @@ import { FormControl } from '@angular/forms';
 import { SingleBeerModel } from '../../../models/single-beer.model';
 import { ApiRequestsService } from '../../../services/api-requests.service';
 import { StorageService } from '../../../services/storage.service';
+import { TranslationService } from '../../../services/translation.service';
 import { FilterBeersComponent } from '../filter-beers.component';
 
 @Component({
@@ -15,9 +16,10 @@ export class SearchBeersComponent
   implements OnInit, OnDestroy {
   constructor(
     public apiRequestsService: ApiRequestsService,
-    public storageService: StorageService
+    public storageService: StorageService,
+    public translationService: TranslationService
   ) {
-    super(apiRequestsService, storageService);
+    super(apiRequestsService, storageService, translationService);
   }
 
   searchInput: FormControl;
