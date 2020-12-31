@@ -6,5 +6,20 @@
     "subtitle2": "usando a"
   },
   "searchBeerLabel": "Procure uma cerveja!",
-  "randomBeerLabel": "Cerveja Aleatória"
+  "randomBeerLabel": "Cerveja Aleatória",
+  "beerSliderTopLabels": {
+    "abv": "Como alcoólatra você gosta da sua cerveja?",
+    "ibu": "Quão amarga você gosta da sua cerveja?",
+    "ebc": "Qual cor você gosta da sua cerveja?"
+  },
+  "beerSliderLeftLabels": {
+    "abv": "Fraco",
+    "ibu": "Leve",
+    "ebc": "Leve"
+  },
+  "beerSliderRightLabels": {
+    "abv": "Forte",
+    "ibu": "Amargo",
+    "ebc": "Sombrio"
+  }
 }

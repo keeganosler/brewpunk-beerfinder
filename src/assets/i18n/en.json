@@ -6,5 +6,20 @@
     "subtitle2": "using the"
   },
   "searchBeerLabel": "Search for a Beer!",
-  "randomBeerLabel": "Random Beer"
+  "randomBeerLabel": "Random Beer",
+  "beerSliderTopLabels": {
+    "abv": "How Alcoholic do you like your Beer?",
+    "ibu": "How Bitter do you like your Beer?",
+    "ebc": "What Colour do you like your Beer?"
+  },
+  "beerSliderLeftLabels": {
+    "abv": "Weak",
+    "ibu": "Mild",
+    "ebc": "Light"
+  },
+  "beerSliderRightLabels": {
+    "abv": "Strong",
+    "ibu": "Bitter",
+    "ebc": "Dark"
+  }
 }
