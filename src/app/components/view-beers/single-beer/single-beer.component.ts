@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 import { SingleBeerModel } from '../../../models/single-beer.model';
 import { ApiRequestsService } from '../../../services/api-requests.service';
 import { StorageService } from '../../../services/storage.service';
+import { TranslationService } from '../../../services/translation.service';
 import { ViewBeersComponent } from '../view-beers.component';
 
 @Component({
@@ -15,9 +16,10 @@ export class SingleBeerComponent
   implements OnInit, OnDestroy {
   constructor(
     public apiRequestsService: ApiRequestsService,
-    storageService: StorageService
+    public storageService: StorageService,
+    public translationService: TranslationService
   ) {
-    super(apiRequestsService, storageService);
+    super(apiRequestsService, storageService, translationService);
   }
 
   subs: Subscription;

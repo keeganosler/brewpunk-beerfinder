@@ -21,5 +21,9 @@
     "abv": "Strong",
     "ibu": "Bitter",
     "ebc": "Dark"
+  },
+  "viewBeerFooterLabel": {
+    "front": "Show More Details",
+    "back": "Show Less Details"
   }
 }

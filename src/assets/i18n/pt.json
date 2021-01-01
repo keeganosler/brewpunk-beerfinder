@@ -21,5 +21,9 @@
     "abv": "Forte",
     "ibu": "Amargo",
     "ebc": "Sombrio"
+  },
+  "viewBeerFooterLabel": {
+    "front": "Mostrar mais detalhes",
+    "back": "Mostrar menos detalhes"
   }
 }

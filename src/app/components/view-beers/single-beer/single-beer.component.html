@@ -2,6 +2,7 @@
 <app-single-beer-front
   *ngIf="singleBeerFront"
   [beer]="currentBeer"
+  [browserLanguage]="browserLanguage"
   (flipToBack)="singleBeerFront = false"
 ></app-single-beer-front>
 <app-single-beer-back

@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ApiRequestsService } from '../../../services/api-requests.service';
 import { StorageService } from '../../../services/storage.service';
+import { TranslationService } from '../../../services/translation.service';
 import { ViewBeersComponent } from '../view-beers.component';
 
 @Component({
@@ -15,9 +16,10 @@ export class BeersCarouselComponent
   subs: Subscription;
   constructor(
     public storageService: StorageService,
-    public apiRequestsService: ApiRequestsService
+    public apiRequestsService: ApiRequestsService,
+    public translationService: TranslationService
   ) {
-    super(apiRequestsService, storageService);
+    super(apiRequestsService, storageService, translationService);
   }
 
   ngOnInit(): void {

@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 import { SingleBeerModel } from '../../models/single-beer.model';
 import { ApiRequestsService } from '../../services/api-requests.service';
 import { StorageService } from '../../services/storage.service';
+import { TranslationService } from '../../services/translation.service';
 
 @Component({
   selector: 'app-view-beers',
@@ -14,7 +15,8 @@ export class ViewBeersComponent implements OnInit, OnDestroy {
   subs: Subscription;
   constructor(
     public apiRequestsService: ApiRequestsService,
-    public storageService: StorageService
+    public storageService: StorageService,
+    public translationService: TranslationService
   ) {
     this.subs = new Subscription();
   }
@@ -22,6 +24,7 @@ export class ViewBeersComponent implements OnInit, OnDestroy {
   currentBeer: SingleBeerModel;
   startIndex: number = 0;
   currentBeerIndex: number = 0;
+  browserLanguage: string;
 
   ngOnInit(): void {
     this.subs.add(
@@ -33,6 +36,11 @@ export class ViewBeersComponent implements OnInit, OnDestroy {
       this.storageService.currentBeer.subscribe((res) => {
         this.currentBeer = res;
       })
+    );
+    this.subs.add(
+      this.translationService.browserLanguage.subscribe(
+        (res) => (this.browserLanguage = res)
+      )
     );
   }
 

@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ApiRequestsService } from '../../../services/api-requests.service';
 import { StorageService } from '../../../services/storage.service';
+import { TranslationService } from '../../../services/translation.service';
 import { ViewBeersComponent } from '../view-beers.component';
 
 @Component({
@@ -13,9 +14,10 @@ export class BeersListComponent
   implements OnInit, OnDestroy {
   constructor(
     public apiRequestsService: ApiRequestsService,
-    public storageService: StorageService
+    public storageService: StorageService,
+    public translationService: TranslationService
   ) {
-    super(apiRequestsService, storageService);
+    super(apiRequestsService, storageService, translationService);
   }
 
   ngOnInit(): void {

@@ -20,8 +20,12 @@
     </div>
   </mat-card-content>
   <mat-card-actions align="end"
-    ><button mat-stroked-button (click)="flipToBack.next()">
-      {{ "Show More Details ->" }}
+    ><button
+      mat-stroked-button
+      (click)="flipToBack.next()"
+      *transloco="let t; lang: this.browserLanguage"
+    >
+      {{ t("viewBeerFooterLabel.front") }} ->
     </button></mat-card-actions
   >
 </mat-card>
