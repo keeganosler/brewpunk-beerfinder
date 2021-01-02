@@ -8,7 +8,6 @@ import {
   TRANSLOCO_CONFIG,
   TRANSLOCO_LOADER,
 } from '@ngneat/transloco';
-import { environment } from '../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class TranslocoHttpLoader implements TranslocoLoader {
@@ -28,7 +27,11 @@ export class TranslocoHttpLoader implements TranslocoLoader {
         availableLangs: ['en', 'es', 'pt', 'fr'],
         defaultLang: 'en',
         reRenderOnLangChange: true,
-        prodMode: environment.production,
+        prodMode: true,
+        fallbackLang: 'en',
+        missingHandler: {
+          useFallbackTranslation: true,
+        },
       }),
     },
     { provide: TRANSLOCO_LOADER, useClass: TranslocoHttpLoader },
