@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { ReplaySubject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TranslationService {
-  language = new ReplaySubject<string>();
+  language = new BehaviorSubject<string>('en');
 
   constructor() {}
 }
