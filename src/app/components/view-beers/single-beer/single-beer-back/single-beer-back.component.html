@@ -4,8 +4,9 @@
   </mat-card-title>
   <mat-card-subtitle>{{ beer.tagline }}</mat-card-subtitle>
   <mat-card-content style="height: 100%">
-    <mat-tab-group>
-      <mat-tab label="Stats">
+    <mat-tab-group *transloco="let t; lang: this.browserLanguage">
+      <mat-tab>
+        <ng-template mat-tab-label>{{ t("beerTabDetails.stats") }}</ng-template>
         <mat-grid-list cols="2" rowHeight="2:1" style="height: 375px">
           <mat-grid-tile class="stats-grid-tile">
             <div>
@@ -39,7 +40,10 @@
           >
         </mat-grid-list>
       </mat-tab>
-      <mat-tab label="Ingredients" style="height: 375px">
+      <mat-tab style="height: 375px">
+        <ng-template mat-tab-label>{{
+          t("beerTabDetails.ingredients")
+        }}</ng-template>
         <div #ingredients class="d-flex justify-content-start">
           <div>
             <h2>Hops</h2>
@@ -76,8 +80,11 @@
           </div>
         </div>
       </mat-tab>
-      <mat-tab label="How to Make"
-        ><div #method>
+      <mat-tab>
+        <ng-template mat-tab-label>{{
+          t("beerTabDetails.method")
+        }}</ng-template>
+        <div #method>
           <h2>
             Fermentation: {{ beer.method.fermentation.temp.value
             }}{{ beer.method.fermentation.temp.unit }}
@@ -94,8 +101,12 @@
     </mat-tab-group>
   </mat-card-content>
   <mat-card-actions align="start"
-    ><button mat-stroked-button (click)="flipToFront.next()">
-      {{ "<- Show Less" }}
+    ><button
+      mat-stroked-button
+      (click)="flipToFront.next()"
+      *transloco="let t; lang: this.browserLanguage"
+    >
+      <- {{ t("viewBeerFooterLabel.back") }}
     </button></mat-card-actions
   >
 </mat-card>

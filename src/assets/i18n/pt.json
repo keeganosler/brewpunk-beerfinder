@@ -25,5 +25,10 @@
   "viewBeerFooterLabel": {
     "front": "Mostrar mais detalhes",
     "back": "Mostrar menos detalhes"
+  },
+  "beerTabDetails": {
+    "stats": "Estatisticas",
+    "ingredients": "Ingredientes",
+    "method": "Como Fazer"
   }
 }

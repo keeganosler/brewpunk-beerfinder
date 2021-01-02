@@ -1,4 +1,3 @@
-<!-- <div style="width: 85%"> -->
 <app-single-beer-front
   *ngIf="singleBeerFront"
   [beer]="currentBeer"
@@ -8,6 +7,6 @@
 <app-single-beer-back
   *ngIf="!singleBeerFront"
   [beer]="currentBeer"
+  [browserLanguage]="browserLanguage"
   (flipToFront)="singleBeerFront = true"
 ></app-single-beer-back>
-<!-- </div> -->
