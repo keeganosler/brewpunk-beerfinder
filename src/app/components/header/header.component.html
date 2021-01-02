@@ -13,10 +13,16 @@
     </p>
   </div>
   <div class="right-header">
-    <mat-form-field>
+    <mat-form-field style="max-width: 20%">
       <mat-select [formControl]="languageControl">
-        <mat-option value="en">1</mat-option>
-        <mat-option value="pt">2</mat-option>
+        <mat-select-trigger>
+          <span
+            ><img height="50" width="50" src="{{ selectedLanguage.url }}"
+          /></span>
+        </mat-select-trigger>
+        <mat-option *ngFor="let language of languages" [value]="language.code">
+          <img height="50" width="50" src="{{ language.url }}"
+        /></mat-option>
       </mat-select>
     </mat-form-field>
   </div>
