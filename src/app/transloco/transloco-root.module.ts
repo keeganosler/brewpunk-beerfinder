@@ -27,8 +27,8 @@ export class TranslocoHttpLoader implements TranslocoLoader {
         availableLangs: ['en', 'es', 'pt', 'fr'],
         defaultLang: 'en',
         reRenderOnLangChange: true,
-        prodMode: true,
-        fallbackLang: 'en',
+        prodMode: false,
+        fallbackLang: ['en', 'pt'],
         missingHandler: {
           useFallbackTranslation: true,
         },
