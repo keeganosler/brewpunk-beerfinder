@@ -10,7 +10,7 @@ export class SingleBeerBackComponent implements OnInit {
   constructor() {}
   @Input() beer: SingleBeerModel;
   @Output() flipToFront = new EventEmitter();
-  @Input() browserLanguage: string;
+  @Input() language: string;
 
   ngOnInit(): void {}
 }

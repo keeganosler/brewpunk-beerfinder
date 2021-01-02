@@ -24,7 +24,7 @@ export class ViewBeersComponent implements OnInit, OnDestroy {
   currentBeer: SingleBeerModel;
   startIndex: number = 0;
   currentBeerIndex: number = 0;
-  browserLanguage: string;
+  language: string;
 
   ngOnInit(): void {
     this.subs.add(
@@ -38,9 +38,7 @@ export class ViewBeersComponent implements OnInit, OnDestroy {
       })
     );
     this.subs.add(
-      this.translationService.browserLanguage.subscribe(
-        (res) => (this.browserLanguage = res)
-      )
+      this.translationService.language.subscribe((res) => (this.language = res))
     );
   }
 

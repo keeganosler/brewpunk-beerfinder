@@ -13,7 +13,7 @@ import { TranslationService } from '../../services/translation.service';
   providers: [ApiRequestsService],
 })
 export class FilterBeersComponent implements OnInit, OnDestroy {
-  browserLanguage: string;
+  language: string;
   subs: Subscription;
   constructor(
     public apiRequestsService: ApiRequestsService,
@@ -38,9 +38,7 @@ export class FilterBeersComponent implements OnInit, OnDestroy {
       )
     );
     this.subs.add(
-      this.translationService.browserLanguage.subscribe(
-        (res) => (this.browserLanguage = res)
-      )
+      this.translationService.language.subscribe((res) => (this.language = res))
     );
   }
 

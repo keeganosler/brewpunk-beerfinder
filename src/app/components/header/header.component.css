@@ -1,0 +1,7 @@
+.parent-header {
+  display: flex;
+}
+.left-header,
+.right-header {
+  flex: 1;
+}

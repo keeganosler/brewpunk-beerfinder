@@ -12,13 +12,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
   constructor(public translationService: TranslationService) {
     this.subs = new Subscription();
   }
-  browserLanguage: string;
+  language: string;
 
   ngOnInit(): void {
     this.subs.add(
-      this.translationService.browserLanguage.subscribe(
-        (res) => (this.browserLanguage = res)
-      )
+      this.translationService.language.subscribe((res) => (this.language = res))
     );
   }
 

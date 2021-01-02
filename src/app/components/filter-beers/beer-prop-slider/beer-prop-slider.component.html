@@ -1,11 +1,11 @@
-<p class="small text-center" *transloco="let t; lang: this.browserLanguage">
+<p class="small text-center" *transloco="let t; lang: this.language">
   {{ t("beerSliderTopLabels." + prop) }}
 </p>
 <div
   class="d-flex justify-content-center align-item-center"
   style="height: 12%; width: 100%"
 >
-  <p class="filter-label mr-3" *transloco="let t; lang: this.browserLanguage">
+  <p class="filter-label mr-3" *transloco="let t; lang: this.language">
     {{ t("beerSliderLeftLabels." + prop) }}
   </p>
   <mat-slider
@@ -17,7 +17,7 @@
     (input)="sliderFormControl.setValue(slider.value)"
     [formControl]="sliderFormControl"
   ></mat-slider>
-  <p class="filter-label ml-2" *transloco="let t; lang: this.browserLanguage">
+  <p class="filter-label ml-2" *transloco="let t; lang: this.language">
     {{ t("beerSliderRightLabels." + prop) }}
   </p>
 </div>

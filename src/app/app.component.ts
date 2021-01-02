@@ -13,6 +13,6 @@ export class AppComponent implements OnInit {
   constructor(private translationService: TranslationService) {}
 
   ngOnInit(): void {
-    this.translationService.browserLanguage.next(getBrowserLang());
+    this.translationService.language.next(getBrowserLang());
   }
 }

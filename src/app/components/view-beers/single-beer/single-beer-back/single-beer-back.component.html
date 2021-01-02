@@ -4,7 +4,7 @@
   </mat-card-title>
   <mat-card-subtitle>{{ beer.tagline }}</mat-card-subtitle>
   <mat-card-content style="height: 100%">
-    <mat-tab-group *transloco="let t; lang: this.browserLanguage">
+    <mat-tab-group *transloco="let t; lang: this.language">
       <mat-tab>
         <ng-template mat-tab-label>{{ t("beerTabDetails.stats") }}</ng-template>
         <mat-grid-list cols="2" rowHeight="2:1" style="height: 375px">
@@ -104,7 +104,7 @@
     ><button
       mat-stroked-button
       (click)="flipToFront.next()"
-      *transloco="let t; lang: this.browserLanguage"
+      *transloco="let t; lang: this.language"
     >
       <- {{ t("viewBeerFooterLabel.back") }}
     </button></mat-card-actions

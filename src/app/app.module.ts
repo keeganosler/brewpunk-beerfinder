@@ -9,6 +9,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
+import { MatSelectModule } from '@angular/material/select';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserModule } from '@angular/platform-browser';
@@ -65,6 +66,7 @@ import { TranslocoRootModule } from './transloco/transloco-root.module';
     NouisliderModule,
     MatGridListModule,
     TranslocoRootModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

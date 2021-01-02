@@ -26,7 +26,7 @@ export class SearchBeersComponent
 
   ngOnInit(): void {
     super.ngOnInit();
-    console.log('bl: ', this.browserLanguage);
+    console.log('bl: ', this.language);
     this.searchInput = new FormControl();
     this.searchInput.valueChanges.subscribe((r) => this.onInputSearchText(r));
   }

@@ -10,7 +10,7 @@ import { SingleBeerModel } from '../../../../models/single-beer.model';
 export class SingleBeerFrontComponent implements OnInit {
   subs: Subscription;
   @Input() beer: SingleBeerModel;
-  @Input() browserLanguage: string;
+  @Input() language: string;
   @Output() flipToBack = new EventEmitter();
 
   constructor() {}

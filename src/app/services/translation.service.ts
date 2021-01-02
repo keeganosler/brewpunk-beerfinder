@@ -5,7 +5,7 @@ import { ReplaySubject } from 'rxjs';
   providedIn: 'root',
 })
 export class TranslationService {
-  browserLanguage = new ReplaySubject<string>();
+  language = new ReplaySubject<string>();
 
   constructor() {}
 }
