@@ -14,8 +14,6 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MultiRangeSliderModule } from '@vijayliebe/multi-range-slider';
-import { NouisliderModule } from 'ng2-nouislider';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BeerPropSliderComponent } from './components/filter-beers/beer-prop-slider/beer-prop-slider.component';
@@ -62,8 +60,6 @@ import { TranslocoRootModule } from './transloco/transloco-root.module';
     MatSliderModule,
     FormsModule,
     ReactiveFormsModule,
-    MultiRangeSliderModule,
-    NouisliderModule,
     MatGridListModule,
     TranslocoRootModule,
     MatSelectModule,
