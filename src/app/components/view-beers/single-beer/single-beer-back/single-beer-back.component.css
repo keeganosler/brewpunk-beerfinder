@@ -1,3 +1,8 @@
+.card-back {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
 .stats-grid-tile {
   height: 33%;
   width: 50%;
@@ -7,27 +12,11 @@
   color: black;
 }
 
+.stats-grid-tile.p {
+  top: 0;
+  left: 0;
+}
+
 .ingredient-list-item {
   max-width: 100%;
 }
-
-mat-list {
-}
-
-/* .mat-tab-group {
-  height: 100%;
-}
-.mat-tab-body-wrapper {
-  flex-grow: 1;
-}
-
-.mat-tab-body {
-  display: flex !important;
-  flex-direction: column;
-}
-
-.mat-tab-body-content {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-} */

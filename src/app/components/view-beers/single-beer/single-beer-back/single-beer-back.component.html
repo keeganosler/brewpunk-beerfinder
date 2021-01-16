@@ -1,4 +1,4 @@
-<mat-card *ngIf="beer" style="max-width: 90%; margin: 0 auto">
+<mat-card *ngIf="beer" class="card-back">
   <mat-card-title>
     {{ beer.name }}
   </mat-card-title>
@@ -9,10 +9,8 @@
         <ng-template mat-tab-label>{{ t("beerTabDetails.stats") }}</ng-template>
         <mat-grid-list cols="2" rowHeight="2:1" style="height: 375px">
           <mat-grid-tile class="stats-grid-tile">
-            <div>
-              <p style="top: 0; left: 0">ABV</p>
-              <h1>{{ beer.abv }}</h1>
-            </div></mat-grid-tile
+            <p>ABV</p>
+            <h1>{{ beer.abv }}</h1></mat-grid-tile
           >
           <mat-grid-tile class="stats-grid-tile"
             ><p>EBC</p>

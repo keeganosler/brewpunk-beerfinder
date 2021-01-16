@@ -1,23 +1,18 @@
-/*.stat-label {*/
-/*  > div:first-child {*/
-/*  font-size: 75%;*/
+.card-front {
+  max-width: 85%;
+  max-height: 90%;
+  margin: 0 auto;
+}
 
-/*  !*font-weight: $font-weight-normal;*!*/
-/*  !*color: $text-muted;*!*/
-/*  margin-bottom: 3px;*/
-/*  !*text-align: center;*!*/
-/*  !*line-height: 1.1;*!*/
-/*  }*/
+.beer-description {
+  max-height: 400px;
+  overflow: scroll;
+}
 
-/*  > div:last-child {*/
-/*  font-size: 100%;*/
-/*  }*/
-/*}*/
-
-.stat-label:first-child {
+.stat-label:first-child.stat-label:first-child {
   font-size: 80px;
   margin-right: 10%;
 }
 stat-label:last-child {
-  font-size: 100%
+  font-size: 100%;
 }

@@ -6,6 +6,10 @@
   flex: 1;
 }
 
+.language-form-field {
+  max-width: 20%;
+}
+
 .mat-select-panel {
   width: 10%;
 }
