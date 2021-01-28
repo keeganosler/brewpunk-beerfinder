@@ -29,6 +29,7 @@ export class FilterBeersComponent implements OnInit, OnDestroy {
   filterProperties: FilterPropertiesModel;
 
   ngOnInit(): void {
+    console.log('test');
     this.subs.add(
       this.storageService.beerPool.subscribe((res) => (this.beerPool = res))
     );
