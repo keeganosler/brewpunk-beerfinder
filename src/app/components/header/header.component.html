@@ -12,18 +12,4 @@
       >
     </p>
   </div>
-  <div class="right-header">
-    <mat-form-field class="language-form-field">
-      <mat-select [formControl]="languageControl">
-        <mat-select-trigger>
-          <span
-            ><img height="50" width="50" src="{{ selectedLanguage.url }}"
-          /></span>
-        </mat-select-trigger>
-        <mat-option *ngFor="let language of languages" [value]="language.code">
-          <img height="50" width="50" src="{{ language.url }}"
-        /></mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
 </div>
